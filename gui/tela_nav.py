@@ -5,12 +5,13 @@ from tkinter import messagebox
 import webbrowser
 import random
 import app_state
+import os
 
 def abrir_navegador(master):
     frame = tk.Frame(master)
     frame.pack(padx=20, pady=20)
 
-    label_user = tk.Label(frame, text=f"Usuário: {app_state.usuario_nome}")
+    label_user = tk.Label(frame, text=f"Usuário: {app_state.usuario_nome or 'Deslogado'}")
     label_user.pack()
 
     # Campo de busca
@@ -40,15 +41,21 @@ def abrir_navegador(master):
 
     tk.Button(frame, text="Ativar VPN", command=ativar_vpn).pack(pady=5)
 
+    def deslogar(label_user):
+        app_state.usuario_logado = False
+        app_state.usuario_nome = ""
+        label_user.config(text="Usuário: Deslogado")
+
+    tk.Button(frame, text="Deslogar", fg="red", command=lambda: deslogar(label_user)).pack(pady=10)
+
     # Entrar na deep web
     def entrar_deepweb():
-        if not app_state.vpn_ativa:
-            messagebox.showwarning("VPN", "Ative a VPN primeiro.")
+        if not app_state.vpn_ativa or app_state.usuario_logado:
+            messagebox.showwarning("Aviso ⚠️", "Para sua segurança peço que ative a VPN " \
+                                   "\n     e deslogue de sua sessão atual.")
             return
 
-        if app_state.usuario_logado:
-            app_state.usuario_logado = False
-            app_state.usuario_nome = ""
+        if not app_state.usuario_logado:
             app_state.modo_anonimo = True
             app_state.anon_user = f"anon{random.randint(100,999)}"
             label_user.config(text=f"Usuário: {app_state.anon_user}")
@@ -65,11 +72,20 @@ def abrir_navegador(master):
 
     links_ocultos = []
     for texto, url in [
-        ("Comprar dados vazados", "https://example.com/dados"),
-        ("Fórum de hackers", "https://example.com/forum"),
-        ("Baixar malware", "https://example.com/malware")
+        ("Comprar dados vazados", "https://br.pinterest.com/pin/pode-no-man-em-2024--645492559121341138/"),
+        ("Fique rico em um clique!", "https://youtu.be/dQw4w9WgXcQ?si=o68LO_MzKVyVRmwp"),
+        ("Baixar malware (100% seguro)", os.path.abspath("C:\\Users\\Usuario\\OneDrive\\Documentos\\My Projects\\Trabalho python\\mene\\script.bat")),
     ]:
         link = tk.Label(frame, text=texto, fg="blue", cursor="hand2")
         link.bind("<Button-1>", lambda e, u=url: webbrowser.open(u))
         link.pack_forget()
         links_ocultos.append(link)
+
+    def voltar():
+        from gui.tela_login import TelaLogin
+        frame.destroy()
+        TelaLogin(master)
+
+    tk.Button(frame, text="voltar", command=voltar).pack(pady=5)
+
+    
