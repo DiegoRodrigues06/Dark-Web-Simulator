@@ -26,7 +26,7 @@ class TelaDeletarConta:
 
         if nome and senha:
             sucesso = login.deletar_usuario(nome, senha)
-            if not sucesso:
+            if sucesso:
                 messagebox.showinfo("Sucesso", "Usuário excluído com sucesso!")
                 self.voltar()
             else:
