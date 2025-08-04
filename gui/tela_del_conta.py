@@ -1,6 +1,6 @@
 import tkinter as tk
 from tkinter import messagebox
-import login  # <- este deve conter cadastrar_usuario()
+import login as login  # <- este deve conter cadastrar_usuario()
 # NÃO importe login.py aqui pra evitar circular import
 
 class TelaDeletarConta:
