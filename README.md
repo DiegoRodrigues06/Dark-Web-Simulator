@@ -2,12 +2,10 @@ Saudações, senhor professor.
 
 Neste software, desenvolvi uma pagina que simula uma navegação pela "dark web 👻".
 Funciona da seguinte maneira:
-    tem um executavel que você pode clicar, ou rodar o main manualmente.
-    
-    você se deparará com a tela de login.
+    primeiramente você se deparará com a tela de login.
 
-    voce poderá criar um novo, atualizar senha, excluir um usuario, e tem minha função de autenticação que
-        creio eu, é a ultima parte do meu crud.
+    voce poderá criar um novo user, atualizar senha, excluir um usuario, e tem minha função de autenticação que ocorre
+        fora da tela (interface), então, creio eu é a ultima parte do crud.
 
     depois, você ira se deparar com a pagina de pesquisa, no primeiro bloco, todas as suas pesquisas serão redirecionadas para o google
         e em baixa haverão alguns botões maneirissimos.
@@ -21,3 +19,13 @@ Funciona da seguinte maneira:
     apos isso, a "dark web" sera disponibilizada, mostrando alguns links ocultos (proibidos 🕵️).
     
     NÃO SE PREOCUPE, o link de malware não vai matar seu PC, é só una brincadeirita ⚠️🥸
+
+    Tambem terá um "forum anonimo", onde você pode:
+        fazer um post anonimamente,
+        vizualizar os post feitos,
+        recarregar a pagina,
+        excluir todos os posts, porque você é o brabo,
+        e mais uma função que ocorre fora de tela ☠️ que atualiza status de vizualização do post
+        no banco de dados quando você clica no botão de reload.
+
+    acho que é isso aí o trabalho, ponto.

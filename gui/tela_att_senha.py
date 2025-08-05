@@ -1,7 +1,7 @@
 import tkinter as tk
 from tkinter import messagebox
-import login  # <- este deve conter cadastrar_usuario()
-# NÃO importe login.py aqui pra evitar circular import
+import login  
+
 
 class TelaAttSenha:
     def __init__(self, master):
@@ -39,6 +39,6 @@ class TelaAttSenha:
             messagebox.showwarning("Erro", "Preencha todos os campos.")
 
     def voltar(self):
-        from gui.tela_login import TelaLogin  # <- import interno evita ciclo
+        from gui.tela_login import TelaLogin 
         self.frame.destroy()
         TelaLogin(self.master)

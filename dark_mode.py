@@ -1,9 +1,12 @@
-# Nesse codigo, o banco para o modo anonimo é criado. o usuario anonimo
+# Nesse codigo, o banco de dados para o modo anonimo é criado. o usuario anonimo
 # é gerado automaticamente na pagina "tela_nav.py" e aqui, é onde são gerenciados os 
-# posts desses usuarios, aqui você pode gerar um post, e vizualizar os posts feitos,
+# posts desses usuarios, aqui você pode gerar um post e vizualizar os posts feitos,
 # quando a pagina é fechada, o usuario gerado vai pro limbo, e nunca mais pode ser 
 # acessado novamente, e como eu to sem ideia, você vai ser o adiminastro supremo
-# que pode deletar o post de todo mundo, acho que acabei o trabalho, ponto.
+# que pode deletar o post de todo mundo, e tambem aqui tem a função de atualizar
+# o estado de visualização do post, POR QUE? porque eu to sem ideia, foi isso 
+# que deu pra fazer kkkkkkkkk.
+# aqui segundo crud concluido 🙏
 
 
 import sqlite3
@@ -47,22 +50,12 @@ def excluir_todos_posts():
     conn.commit()
     conn.close()
 
-def garantir_coluna_visualizado(cursor):
-    try:
-        cursor.execute("ALTER TABLE posts_anonimos ADD COLUMN visualizado INTEGER DEFAULT 0")
-        print("Coluna 'visualizado' adicionada.")
-    except sqlite3.OperationalError as e:
-        if "duplicate column name" in str(e):
-            print("A coluna 'visualizado' já existe.")
-        else:
-            raise
-
 def marcar_todos_como_visualizados():
     conn = conectar()
     cursor = conn.cursor()
-    
     cursor.execute("UPDATE posts_anonimos SET visualizado = 1 WHERE visualizado = 0")
     conn.commit()
     conn.close()
 
 criar_tabela()
+

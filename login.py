@@ -1,3 +1,6 @@
+# eu devia ter feito essa parte do codigo junto com com o db.py
+# mas agora é tarde demais, ja ta feito 🥸
+
 from db import conectar
 from db import criar_tabelas
 

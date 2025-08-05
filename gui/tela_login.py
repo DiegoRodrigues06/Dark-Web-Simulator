@@ -1,5 +1,3 @@
-# login.py
-
 import tkinter as tk
 from tkinter import messagebox
 import app_state
@@ -31,6 +29,9 @@ class TelaLogin:
 
         tk.Button(self.frame, text="excluir conta", command=self.deletar_conta).grid(row=5, columnspan=2, pady=10)
 
+
+                                     # -- logica de login, cadastro,etc. --
+
     def login(self):
         nome = self.entry_user.get()
         senha = self.entry_pass.get()
@@ -47,6 +48,8 @@ class TelaLogin:
         else:
             messagebox.showwarning("Erro", "Preencha usuário e senha.")
 
+
+    # redireciona para pagina propria
     def cadastrar(self):
         self.frame.destroy()
         TelaCadastro(self.master)

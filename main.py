@@ -3,7 +3,7 @@ from gui import tela_login
 
 def main():
     root = tk.Tk()
-    root.title("Dark Web Simulator 🕸️")
+    root.title("Dark Web Simulator ☠️👻⚠️🕵️🥸")
     tela_login.TelaLogin(root)
     root.mainloop()
 

@@ -35,6 +35,6 @@ class TelaCadastro:
             messagebox.showwarning("Erro", "Preencha todos os campos.")
 
     def voltar(self):
-        from gui.tela_login import TelaLogin  # <- import interno evita ciclo
+        from gui.tela_login import TelaLogin  
         self.frame.destroy()
         TelaLogin(self.master)
