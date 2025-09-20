@@ -1,32 +1,50 @@
-Saudações, senhor professor.
+# Simulador de Navegação Anônima (Projeto)
 
-Neste software, desenvolvi uma pagina que simula uma navegação pela "dark web 👻".
-Funciona da seguinte maneira:
-    
-    primeiramente você se deparará com a tela de login.
+> Aplicação web educativa que simula uma experiência de navegação “anônima” e um fórum anônimo. Feita para fins acadêmicos e demonstrativos — **não** acessa a real dark web nem contém links maliciosos.
 
-    voce poderá criar um novo user, atualizar senha, excluir um usuario, e tem minha função de autenticação que ocorre
-        fora da tela (interface), então, creio eu é a ultima parte do crud.
+---
 
-    depois, você ira se deparar com a pagina de pesquisa, no primeiro bloco, todas as suas pesquisas serão redirecionadas para o google
-        e em baixa haverão alguns botões maneirissimos.
+## Sobre o projeto
+Este projeto é uma página web que simula, de forma segura e controlada, funcionalidades associadas a uma navegação “anônima” e a um fórum anônimo. O objetivo é demonstrar conceitos de autenticação, gerenciamento de sessão, criação/consumo de conteúdo e tratamento de uploads (simulados) em um ambiente de desenvolvimento.
 
-    um botão bastante chamativo com o nome de "entrar na dark web", só irá funcionar com os seguintes requerimentos:
-        primeiro, você não pode estar conectado a sua conta (deslogue com o botão).
+### Principais conceitos demonstrados:
+- CRUD de usuários (registro, atualização de senha, exclusão)
+- Autenticação (login/logoff)
+- Modo “anônimo” temporário (usuário anônimo gerado para a sessão)
+- Interface de busca (redirecionamento para mecanismos de busca reais)
+- Fórum anônimo: criar post, visualizar posts, recarregar (atualizar visualizações), excluir posts
+- Uploads de imagem para análise (armazenamento seguro como arquivo/URL — simulado)
 
-        segundo, você deve acessar um vpn para aumentar sua segurança (ative com o botão).
+> Obs: Tudo é simulado para fins pedagógicos. O sistema **não** redireciona para conteúdos ilegais nem executa código malicioso.
 
-    apos clicar no botão, será gerado um novo usuário anonimo, que só existira enquanto você estiver usando a dark web
-    apos isso, a "dark web" sera disponibilizada, mostrando alguns links ocultos (proibidos 🕵️).
-    
-    NÃO SE PREOCUPE, o link de malware não vai matar seu PC, é só una brincadeirita ⚠️🥸
+---
 
-    Tambem terá um "forum anonimo", onde você pode:
-        fazer um post anonimamente,
-        vizualizar os post feitos,
-        recarregar a pagina,
-        excluir todos os posts, porque você é o brabo,
-        e mais uma função que ocorre fora de tela ☠️ que atualiza status de vizualização do post
-        no banco de dados quando você clica no botão de reload.
+## Demonstração
+Insira aqui screenshots/GIFs do projeto (frontend). Exemplo:
 
-    acho que é isso aí o trabalho, ponto.
+---
+
+## Funcionalidades
+
+- **Autenticação**
+  - Registro de novo usuário
+  - Login / Logout
+  - Atualização de senha
+  - Exclusão de conta
+
+- **Modo Anônimo**
+  - Gera um usuário temporário que existe apenas enquanto a sessão anônima estiver ativa
+  - Requer que o usuário esteja deslogado para ativar
+
+- **Busca**
+  - Caixa de busca que redireciona consultas para um mecanismo de busca (ex.: Google)
+  - Botões de ação e navegação (apenas UI / links seguros)
+
+- **Fórum Anônimo**
+  - Criar post anônimo
+  - Visualizar posts
+  - Recarregar posts (simula atualização de visualizações)
+  - Excluir todos os posts (ação administrativa disponível na UI de desenvolvimento)
+
+- **Uploads (simulados)**
+  - Usuário pode enviar imagem para “análise”; imagens são armazenadas localmente/temporariamente e referenciadas no histórico do chat/forum (nenhuma análise externa é feita por padrão)
