@@ -1,8 +1,4 @@
-# Simulador de Navegação Anônima (Projeto)
-
-> Aplicação web educativa que simula uma experiência de navegação “anônima” e um fórum anônimo. Feita para fins acadêmicos e demonstrativos — **não** acessa a real dark web nem contém links maliciosos.
-
----
+# Dark Web Simulator
 
 ## Sobre o projeto
 Este projeto é uma página web que simula, de forma segura e controlada, funcionalidades associadas a uma navegação “anônima” e a um fórum anônimo. O objetivo é demonstrar conceitos de autenticação, gerenciamento de sessão, criação/consumo de conteúdo e tratamento de uploads (simulados).
